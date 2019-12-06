@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace uTest
+namespace validTests
 {
-    class Layer
+    public class Layer
     {
         private Material material;
         /// <summary>
@@ -12,35 +12,34 @@ namespace uTest
         /// </summary>
         private readonly double thickness;
 
-        public Layer(Material material, double thickness)
+        public Layer(Material material, int thickness)
         {
-            if (thickness > 0)
-            {
-                this.thickness = thickness;
-            }
-            else
-            {
-                throw new ArgumentException("Thickness must be a positive non-zero value.");
-            }
-            
+            this.thickness = thickness;
             this.material = material;
         }
+
         public double GetRValue()
         {
             return thickness / material.GetThermalConductivity();
         }
 
-        public bool CheckCompatibility(Component.ComponentType type1)
+        public bool CheckCompatibility(Component.ComponentType type2)
         {
-            bool compatibilityCheck = false;
+            bool isCompatible = false;
 
-            foreach (Component.ComponentType type2 in material.GetCompatibility())
+            foreach (Component.ComponentType type1 in material.compatibleTypes)
             {
                 if (type1 == type2)
-                    compatibilityCheck = true;
+                {
+                    isCompatible = true;
+                }
+                else
+                {
+                    isCompatible = false;
+                }
             }
 
-            return compatibilityCheck;
+            return isCompatible;
         }
     }
-}   
+}
