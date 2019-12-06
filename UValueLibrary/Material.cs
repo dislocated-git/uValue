@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace uTest
+namespace validTests
 {
-    class Material
+    public class Material
     {
 
         /// <summary>
@@ -12,41 +12,21 @@ namespace uTest
         /// </summary>
         private readonly double thermalConductivity;
 
-        private List<Component.ComponentType> compatibleTypes;
-
-        Component.ComponentType type;
-
-
-        public Material(double thermalConductivity, List<Component.ComponentType> compatibleTypes)
+        public readonly List<Component.ComponentType> compatibleTypes;
+                
+        public Material(double thermalConductivity, List<Component.ComponentType> types)
         {
-            if (thermalConductivity > 0)
+            if (thermalConductivity < 0)
             {
                 throw new ArgumentException("Thermal conductivity must be a positive non-zero value.");
             }
-            else
-            {
-                this.thermalConductivity = thermalConductivity;
-            }
-           
-            if (compatibleTypes.Count == 0)
-            {
-                throw new ArgumentException("List of compatible types must have at least one member.");
-            }
-            else
-            {
-                this.compatibleTypes = compatibleTypes;
-            }
+            this.thermalConductivity = thermalConductivity;
+            this.compatibleTypes = types;
         }
-
+        
         public double GetThermalConductivity()
         {
             return thermalConductivity;
         }
-
-        public List<Component.ComponentType> GetCompatibility()
-        {
-            return this.compatibleTypes;
-        }
-    
     }
 }

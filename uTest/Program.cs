@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace uTest
+namespace validTests
 {
     class Program
     {
