@@ -1,7 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Xunit;
-using System.Collections.Generic;
-using System.Text;
 namespace validTests
 {
     public class testComponent
@@ -70,7 +68,7 @@ namespace validTests
             double u = 1 / (wall.GetRValueSum() + Rse + Rsi);
 
             Assert.Equal(20, wall.GetRValueSum());
-            Assert.Equal((double) 1 / 22, u);
+            Assert.Equal((double)1 / 22, u);
 
             return u;
         }

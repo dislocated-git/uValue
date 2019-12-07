@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace validTests
 {
@@ -11,7 +9,7 @@ namespace validTests
 
         public ComponentType type;
 
-        public enum ComponentType {wall, floor}
+        public enum ComponentType { wall, floor }
 
         public Component(List<Layer> layers, ComponentType type)
         {

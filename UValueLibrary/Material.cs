@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace validTests
 {
@@ -13,7 +12,7 @@ namespace validTests
         private readonly double thermalConductivity;
 
         public readonly List<Component.ComponentType> compatibleTypes;
-                
+
         public Material(double thermalConductivity, List<Component.ComponentType> types)
         {
             if (thermalConductivity < 0)
@@ -23,7 +22,7 @@ namespace validTests
             this.thermalConductivity = thermalConductivity;
             this.compatibleTypes = types;
         }
-        
+
         public double GetThermalConductivity()
         {
             return thermalConductivity;

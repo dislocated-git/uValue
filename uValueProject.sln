@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "unitTests", "uTest\unitTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UValueLibrary", "UValueLibrary\UValueLibrary.csproj", "{C5FFACC1-AFAC-4FBC-8653-8171CF82DE1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCalc", "UCalc\UCalc.csproj", "{96E09FB7-B832-4059-9D5C-44D3D1B3DB1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C5FFACC1-AFAC-4FBC-8653-8171CF82DE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5FFACC1-AFAC-4FBC-8653-8171CF82DE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5FFACC1-AFAC-4FBC-8653-8171CF82DE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E09FB7-B832-4059-9D5C-44D3D1B3DB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E09FB7-B832-4059-9D5C-44D3D1B3DB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E09FB7-B832-4059-9D5C-44D3D1B3DB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E09FB7-B832-4059-9D5C-44D3D1B3DB1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
