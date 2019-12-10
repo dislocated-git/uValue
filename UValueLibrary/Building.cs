@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace validTests
+namespace UValue
 {
     class Building
     {
