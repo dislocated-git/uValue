@@ -31,9 +31,11 @@
             this.TopControlPanel = new System.Windows.Forms.Panel();
             this.UCalc_TopNameLabel = new System.Windows.Forms.Label();
             this.MainMenuPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.componentListPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
+            this.ListLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.TopControlPanel.SuspendLayout();
+            this.componentListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopControlPanel
@@ -69,19 +71,20 @@
             this.MainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MainMenuPanel.Location = new System.Drawing.Point(0, 30);
             this.MainMenuPanel.Name = "MainMenuPanel";
-            this.MainMenuPanel.Size = new System.Drawing.Size(80, 731);
+            this.MainMenuPanel.Size = new System.Drawing.Size(74, 731);
             this.MainMenuPanel.TabIndex = 0;
             this.MainMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainMenuPanel_Paint);
             // 
-            // panel1
+            // componentListPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(80, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(229, 731);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.componentListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.componentListPanel.Controls.Add(this.ListLayoutPanel);
+            this.componentListPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.componentListPanel.Location = new System.Drawing.Point(74, 30);
+            this.componentListPanel.Name = "componentListPanel";
+            this.componentListPanel.Size = new System.Drawing.Size(256, 731);
+            this.componentListPanel.TabIndex = 0;
+            this.componentListPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // closeButton
             // 
@@ -100,13 +103,22 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // ListLayoutPanel
+            // 
+            this.ListLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ListLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListLayoutPanel.Name = "ListLayoutPanel";
+            this.ListLayoutPanel.Size = new System.Drawing.Size(256, 731);
+            this.ListLayoutPanel.TabIndex = 0;
+            this.ListLayoutPanel.WrapContents = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.componentListPanel);
             this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.TopControlPanel);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,6 +131,7 @@
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.TopControlPanel.ResumeLayout(false);
             this.TopControlPanel.PerformLayout();
+            this.componentListPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -128,8 +141,9 @@
         private System.Windows.Forms.Panel TopControlPanel;
         private System.Windows.Forms.Panel MainMenuPanel;
         private System.Windows.Forms.Label UCalc_TopNameLabel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel componentListPanel;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.FlowLayoutPanel ListLayoutPanel;
     }
 }
 

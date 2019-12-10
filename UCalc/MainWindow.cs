@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using UCalc.Controls.UserControls;
 
 namespace UCalc
 {
@@ -14,13 +16,51 @@ namespace UCalc
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            ComponentEntry componentEntry = new ComponentEntry("Yee", 5);
 
+
+            ComponentEntry componentEntry2 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry3 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry4 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry5 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry6 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry7 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry8 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry9 = new ComponentEntry("5", 1);
+            ComponentEntry componentEntry10 = new ComponentEntry("5", 1);
+            componentEntry10.componentName.Text = "infinite yes";
+            ListLayoutPanel.VerticalScroll.Visible = false;
+            ListLayoutPanel.HorizontalScroll.Maximum = 0;
+            ListLayoutPanel.AutoScroll = false;
+            ListLayoutPanel.VerticalScroll.Visible = false;
+            ListLayoutPanel.AutoScroll = true;
+            ListLayoutPanel.VerticalScroll.Visible = false;
+
+
+            ListLayoutPanel.Controls.Add(componentEntry);
+            ListLayoutPanel.Controls.Add(componentEntry2);
+            ListLayoutPanel.Controls.Add(componentEntry3);
+            ListLayoutPanel.Controls.Add(componentEntry4);
+            ListLayoutPanel.Controls.Add(componentEntry5);
+            ListLayoutPanel.Controls.Add(componentEntry6);
+            ListLayoutPanel.Controls.Add(componentEntry7);
+            ListLayoutPanel.Controls.Add(componentEntry8);
+            ListLayoutPanel.Controls.Add(componentEntry9);
+            ListLayoutPanel.Controls.Add(componentEntry10);
         }
 
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
 
-
-
+        private enum ScrollBarDirection
+        {
+            SB_HORZ = 0,
+            SB_VERT = 1,
+            SB_CTL = 2,
+            SB_BOTH = 3
+        }
 
         // Value for CS_DROPSHADOW class style. Enables the drop shadow effect on a window.
         private const int CS_DropShadow = 0x00020000;
@@ -49,6 +89,8 @@ namespace UCalc
                     return;
                 }
             }
+            ShowScrollBar(ListLayoutPanel.Handle, (int)ScrollBarDirection.SB_BOTH, false);
+            
             base.WndProc(ref m);
         }
 
