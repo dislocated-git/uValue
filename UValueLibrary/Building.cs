@@ -11,26 +11,21 @@ namespace UValue
             this.components = components;
         }
 
-
-        // Commented this out for now, as the method references don't work yet.
-
-        /*
         public double GetBuildingUValue()
         {
-            double tsa = 0;
-            double sAUValue = 0;
+            double totalSurfaceArea = 0;
+            double sumCombinedSU = 0;
 
             foreach (Component c in components)
             {
-                tsa += c.surfaceArea;
-                sAUValue += c.surfaceArea * c.GetUValue();
+                totalSurfaceArea += c.surfaceArea;
+                sumCombinedSU += c.surfaceArea * c.GetUValue();
             }
 
-            double uValue = sAUValue / tsa;
+            double uValue = sumCombinedSU / totalSurfaceArea;
 
             return uValue;
         }
-        */
 
     }
 }

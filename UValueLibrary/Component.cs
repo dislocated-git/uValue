@@ -9,6 +9,7 @@ namespace UValue
 
         public ComponentType type;
 
+        public double surfaceArea;
         public enum ComponentType { wall, floor }
 
         public Component(List<Layer> layers, ComponentType type)
@@ -16,17 +17,17 @@ namespace UValue
             this.layers = layers;
             this.type = type;
         }
-        /// <summary>
-        /// Returns a U Value of this component.
-        /// </summary>
-        /// <param name="Rse">External heat transfer resistance.</param>
-        /// <param name="Rsi">Internal heat transfer resistance.</param>
-        /// <returns></returns>
-        /// 
 
-        public double GetUValue(double Rse, double Rsi)
+        public Component(List<Layer> layers, ComponentType type, double surfaceArea)
         {
-            return 1 / (this.GetRValueSum() + Rse + Rsi);
+            this.layers = layers;
+            this.type = type;
+            this.surfaceArea = surfaceArea;
+        }
+
+        public double GetUValue()
+        {
+            return 1 / (this.GetRValueSum());
         }
 
         public double GetRValueSum()
