@@ -43,6 +43,7 @@
             this.componentName.Size = new System.Drawing.Size(175, 23);
             this.componentName.TabIndex = 0;
             this.componentName.Text = "Sample Component";
+            this.componentName.Click += new System.EventHandler(this.ClickedOn);
             // 
             // layersTitle
             // 
@@ -54,6 +55,7 @@
             this.layersTitle.Size = new System.Drawing.Size(51, 16);
             this.layersTitle.TabIndex = 1;
             this.layersTitle.Text = "Layers:";
+            this.layersTitle.Click += new System.EventHandler(this.ClickedOn);
             // 
             // layersCount
             // 
@@ -65,6 +67,7 @@
             this.layersCount.Size = new System.Drawing.Size(15, 16);
             this.layersCount.TabIndex = 2;
             this.layersCount.Text = "0";
+            this.layersCount.Click += new System.EventHandler(this.ClickedOn);
             // 
             // ComponentEntry
             // 
@@ -77,7 +80,7 @@
             this.Name = "ComponentEntry";
             this.Size = new System.Drawing.Size(256, 77);
             this.Load += new System.EventHandler(this.ComponentEntry_Load);
-            this.Click += new System.EventHandler(this.ComponentEntry_Click);
+            this.Click += new System.EventHandler(this.ClickedOn);
             this.ResumeLayout(false);
             this.PerformLayout();
 
