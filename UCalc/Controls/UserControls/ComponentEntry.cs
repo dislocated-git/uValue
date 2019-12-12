@@ -15,7 +15,7 @@ namespace UCalc.Controls.UserControls
 
         public Component Component { get; set; }
 
-        public event System.EventHandler Selected;
+        public event EventHandler Selected;
 
         protected virtual void OnSelected()
         {

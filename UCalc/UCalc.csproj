@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\UserControls\ComponentCreationDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\ComponentCreationDialog.Designer.cs">
+      <DependentUpon>ComponentCreationDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UserControls\ComponentEntry.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\UserControls\ComponentCreationDialog.resx">
+      <DependentUpon>ComponentCreationDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserControls\ComponentEntry.resx">
       <DependentUpon>ComponentEntry.cs</DependentUpon>
     </EmbeddedResource>
