@@ -33,7 +33,7 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.UCalc_TopNameLabel = new System.Windows.Forms.Label();
             this.MainMenuPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.creationButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.componentListPanel = new System.Windows.Forms.Panel();
             this.ListLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -92,7 +92,7 @@
             // MainMenuPanel
             // 
             this.MainMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.MainMenuPanel.Controls.Add(this.button1);
+            this.MainMenuPanel.Controls.Add(this.creationButton);
             this.MainMenuPanel.Controls.Add(this.optionsButton);
             this.MainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MainMenuPanel.Location = new System.Drawing.Point(0, 30);
@@ -100,20 +100,21 @@
             this.MainMenuPanel.Size = new System.Drawing.Size(74, 730);
             this.MainMenuPanel.TabIndex = 0;
             // 
-            // button1
+            // creationButton
             // 
-            this.button1.BackgroundImage = global::UCalc.Properties.Resources.icons8_plus_50;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(21, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 37);
-            this.button1.TabIndex = 3;
-            this.button1.TabStop = false;
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
+            this.creationButton.BackgroundImage = global::UCalc.Properties.Resources.icons8_plus_50;
+            this.creationButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.creationButton.FlatAppearance.BorderSize = 0;
+            this.creationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.creationButton.ForeColor = System.Drawing.Color.Transparent;
+            this.creationButton.Location = new System.Drawing.Point(21, 17);
+            this.creationButton.Name = "creationButton";
+            this.creationButton.Size = new System.Drawing.Size(34, 37);
+            this.creationButton.TabIndex = 3;
+            this.creationButton.TabStop = false;
+            this.creationButton.UseMnemonic = false;
+            this.creationButton.UseVisualStyleBackColor = false;
+            this.creationButton.Click += new System.EventHandler(this.creationButton_Click);
             // 
             // optionsButton
             // 
@@ -201,6 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1180, 760);
             this.Controls.Add(this.dynamicPanel);
@@ -242,7 +244,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel dynamicPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button creationButton;
     }
 }
 

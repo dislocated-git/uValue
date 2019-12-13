@@ -65,6 +65,19 @@
     <Compile Include="Controls\UserControls\ComponentEntry.Designer.cs">
       <DependentUpon>ComponentEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UserControls\LayerEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\LayerEntry.Designer.cs">
+      <DependentUpon>LayerEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\LayersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\LayersList.Designer.cs">
+      <DependentUpon>LayersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentData.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,22 +87,43 @@
     <Compile Include="MainWindow_Graphics.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MaterialCreatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialCreatePopup.Designer.cs">
+      <DependentUpon>MaterialCreatePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MaterialCreatePopup_Graphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Controls\UserControls\ComponentCreationDialog.resx">
       <DependentUpon>ComponentCreationDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserControls\ComponentEntry.resx">
       <DependentUpon>ComponentEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\LayerEntry.resx">
+      <DependentUpon>LayerEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\LayersList.resx">
+      <DependentUpon>LayersList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialCreatePopup.resx">
+      <DependentUpon>MaterialCreatePopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,6 +10,9 @@ namespace UValue
         public ComponentType type;
 
         public double surfaceArea;
+
+        public string name;
+
         public enum ComponentType { wall, floor }
 
         public Component(List<Layer> layers, ComponentType type)
@@ -39,6 +42,16 @@ namespace UValue
             }
 
             return output;
+        }
+
+        public void AddLayer(Layer layer)
+        {
+            layers.Add(layer);
+        }
+
+        public void RemoveLayer(Layer layer)
+        {
+            layers.Remove(layer);
         }
     }
 }

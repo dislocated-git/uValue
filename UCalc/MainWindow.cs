@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using UCalc.Controls.UserControls;
+using UValue;
 
 namespace UCalc
 {
@@ -11,7 +12,7 @@ namespace UCalc
     {
         public const int cGrip = 26;      // Grip size
 
-        private ComponentEntry activeComponent = null;
+        private Component activeComponent = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -21,7 +22,6 @@ namespace UCalc
         {
             ComponentEntry componentEntry = new ComponentEntry();
             ListLayoutPanel.Controls.Add(componentEntry);
-
         }
 
 
@@ -44,18 +44,20 @@ namespace UCalc
 
             componentEntry.Selected += ComponentEntry_SelectedChanged;
 
-
-            dynamicPanel.Controls.Add(new ComponentCreationDialog());
         }
 
         private void ComponentEntry_SelectedChanged(object sender, EventArgs e)
         {
             if (activeComponent != null)
             {
-                
+                activeComponent = (sender as ComponentEntry).Component;
             }
         }
 
-
+        private void creationButton_Click(object sender, EventArgs e)
+        {
+            dynamicPanel.Controls.Add(new ComponentCreationDialog());
+            dynamicPanel.Visible = true;
+        }
     }
 }

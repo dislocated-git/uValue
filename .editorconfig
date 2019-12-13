@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1060: Move pinvokes to native methods class
+dotnet_diagnostic.CA1060.severity = suggestion
