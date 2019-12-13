@@ -4,16 +4,11 @@ namespace UValue
 {
     public class Component
     {
-        //private readonly List<Layer> layers;
         public List<Layer> layers;
 
-        public ComponentType type;
-
-        public double surfaceArea;
-
         public string name;
-
-        public enum ComponentType { wall, floor }
+        public double surfaceArea;
+        public ComponentType type;
 
         public Component(List<Layer> layers, ComponentType type)
         {
@@ -28,9 +23,16 @@ namespace UValue
             this.surfaceArea = surfaceArea;
         }
 
-        public double GetUValue()
+        public enum ComponentType { wall, floor }
+
+        public void AddLayer(Layer layer)
         {
-            return 1 / (this.GetRValueSum());
+            layers.Add(layer);
+        }
+
+        public void RemoveLayer(Layer layer)
+        {
+            layers.Remove(layer);
         }
 
         public double GetRValueSum()
@@ -44,14 +46,9 @@ namespace UValue
             return output;
         }
 
-        public void AddLayer(Layer layer)
+        public double GetUValue()
         {
-            layers.Add(layer);
-        }
-
-        public void RemoveLayer(Layer layer)
-        {
-            layers.Remove(layer);
+            return 1 / (this.GetRValueSum());
         }
     }
 }

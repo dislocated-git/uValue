@@ -2,7 +2,7 @@
 
 namespace UValue
 {
-    class Building
+    internal class Building
     {
         public List<Component> components;
 
@@ -26,6 +26,5 @@ namespace UValue
 
             return uValue;
         }
-
     }
 }

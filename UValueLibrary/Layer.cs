@@ -4,7 +4,6 @@ namespace UValue
 {
     public class Layer
     {
-        private Material material;
         public string _name;
 
         /// <summary>
@@ -12,18 +11,24 @@ namespace UValue
         /// </summary>
         private double _thickness;
 
-        public double Thickness
+        private Material material;
+
+        public Layer(Material material, int Thickness)
         {
-            get
-            {
-                return _thickness;
-            }
-            set
-            {
-                _thickness = value;
-                ThicknessChanged?.Invoke(this, EventArgs.Empty);
-            }
+            this.Thickness = Thickness;
+            this.material = material;
         }
+
+        public Layer(Material material, int Thickness, string Name)
+        {
+            this.Thickness = Thickness;
+            this.material = material;
+            this.Name = Name;
+        }
+
+        public event EventHandler NameChanged;
+
+        public event EventHandler ThicknessChanged;
 
         public string Name
         {
@@ -37,26 +42,18 @@ namespace UValue
                 NameChanged?.Invoke(this, EventArgs.Empty);
             }
         }
-       
-        public event EventHandler ThicknessChanged;
-        public event EventHandler NameChanged;
 
-        public Layer(Material material, int thickness)
+        public double Thickness
         {
-            this.Thickness = thickness;
-            this.material = material;
-        }
-
-        public Layer(Material material, int thickness, string name)
-        {
-            this.Thickness = thickness;
-            this.material = material;
-            this.Name = name;
-        }
-
-        public double GetRValue()
-        {
-            return Thickness / material.GetThermalConductivity();
+            get
+            {
+                return _thickness;
+            }
+            set
+            {
+                _thickness = value;
+                ThicknessChanged?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public bool CheckCompatibility(Component.ComponentType type2)
@@ -76,6 +73,11 @@ namespace UValue
             }
 
             return isCompatible;
+        }
+
+        public double GetRValue()
+        {
+            return Thickness / material.GetThermalConductivity();
         }
     }
 }

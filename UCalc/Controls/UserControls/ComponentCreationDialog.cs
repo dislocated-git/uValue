@@ -75,8 +75,8 @@ namespace UCalc.Controls.UserControls
             if (valid)
             {
                 Layer newLayer = new Layer(material: materialsBox.SelectedItem as Material,
-                                           thickness: (int)thicknessInput.Value,
-                                           name: newLayerName.Text);
+                                           Thickness: (int)thicknessInput.Value,
+                                           Name: newLayerName.Text);
                 currentLayers.Add(newLayer);
                 layersList.UpdateLayers(ref currentLayers);
             }
